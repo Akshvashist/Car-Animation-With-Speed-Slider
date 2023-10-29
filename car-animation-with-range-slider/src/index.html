@@ -1,0 +1,135 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:300,400,400i,500,600,700|Roboto+Slab:300,400,700|Dancing+Script:400,700|Oxygen+Mono|Abril+Fatface" rel="stylesheet">
+
+  <body class="car-page">
+    <section>
+      <div class="wrapper">
+        <div class="contact-form">
+
+          <div class="contact-form-row">
+            <div class="form-group col-sm">
+              <label>Car Speed: </label>
+
+
+              <input type="range" class="range-slider__range" name="ageInputName" id="ageInputId" value="24" min="0" max="240" onchange="changeSpeed(this);" oninput="ageOutputId.value = ageInputId.value">
+              <output name="ageOutputName" id="ageOutputId" class="range-slider__value">24</output>
+
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <div class="speed-limt">
+          <h2>Speed limit : 140</h2> </div>
+
+        <div class="speed-limt speed-limt-cross" id="limt">
+          <h2>Speed limit Crossed</h2> </div>
+
+      </div>
+      <div class="skyline">
+        <div class="building1-shadow"></div>
+        <div class="building1">
+          <div class="building-left-half"></div>
+          <div class="building-right-half"></div>
+        </div>
+      </div>
+      <div class="road">
+        <div class="road-top-half"></div>
+        <div class="road-bottom-half"></div>
+      </div>
+      <div class="car-container" id="car">
+        <div class="car-top1">
+          <div class="window1"></div>
+          <div class="window2"></div>
+        </div>
+        <div class="car-top2">
+          <div class="door">
+            <div class="door-knob"></div>
+          </div>
+        </div>
+        <div class="car-bottom">
+          <div class="wheel1-top"></div>
+          <div class="wheel1">
+            <div class="wheel-dot1"></div>
+            <div class="wheel-dot2"></div>
+            <div class="wheel-dot3"></div>
+            <div class="wheel-dot4"></div>
+          </div>
+          <div class="wheel2-top"></div>
+          <div class="wheel2">
+            <div class="wheel-dot1"></div>
+            <div class="wheel-dot2"></div>
+            <div class="wheel-dot3"></div>
+            <div class="wheel-dot4"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </section>
+    <footer>
+      <div class="wrapper">
+        <div class="text-center">
+          <p>Copyright &copy; Aksh Website 2023 </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      function changeSpeed(n) {
+        var speed = document.getElementById("car");
+        var speedLimt = document.getElementById("limt");
+        speed.style.fontStyle = n.value;
+      
+        speedLimt.style.display = "none";
+      
+        var checkSpeed = n.value;
+        switch (true) {
+          case checkSpeed <= 50:
+            speed.style.animationDuration = "10s";
+            break;
+          case checkSpeed <= 60:
+            speed.style.animationDuration = "9s";
+            break;
+          case checkSpeed <= 70:
+            speed.style.animationDuration = "8s";
+            break;
+          case checkSpeed <= 80:
+            speed.style.animationDuration = "7s";
+            break;
+          case checkSpeed <= 100:
+            speed.style.animationDuration = "6s";
+            break;
+          case checkSpeed <= 140:
+            speed.style.animationDuration = "5s";
+            break;
+          case checkSpeed <= 145:
+            speed.style.animationDuration = "5s";
+            speedLimt.style.display = "inline-block";
+            break;
+      
+          case checkSpeed <= 160:
+            speed.style.animationDuration = "4s";
+            speedLimt.style.display = "inline-block";
+      
+            break;
+          case checkSpeed <= 200:
+            speed.style.animationDuration = "1s";
+            speedLimt.style.display = "inline-block";
+            break;
+          case checkSpeed <= 240:
+            speed.style.animationDuration = "0.5s";
+            speedLimt.style.display = "inline-block";
+            break;
+      
+          case checkSpeed <= 241:
+            speed.style.animationDuration = "100s";
+            speedLimt.style.display = "inline-block";
+            break;
+        }
+      }
+    </script>
+  </body>
